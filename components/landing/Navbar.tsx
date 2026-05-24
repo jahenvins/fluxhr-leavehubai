@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+
 export default function Navbar() {
   return (
     <motion.header
@@ -24,59 +25,49 @@ export default function Navbar() {
 
             <div>
               <h1 className="text-lg font-bold text-white tracking-tight">
-        FluxHR
+                FluxHR
               </h1>
 
               <p className="text-xs text-zinc-500">
-                Modern HR
-Built For Teams
+                Modern HR Built For Teams
               </p>
             </div>
           </div>
 
           <div className="hidden md:flex items-center gap-10 text-sm">
             
-            <a
-              href="#"
-              className="text-teal-300 transition hover:text-white"
-            >
+            <a href="#" className="text-teal-300 transition hover:text-white">
               Home
             </a>
 
-            <a
-              href="#"
-              className="text-zinc-400 transition hover:text-white"
-            >
+            <a href="#" className="text-zinc-400 transition hover:text-white">
               Features
             </a>
 
-            <a
-              href="#"
-              className="text-zinc-400 transition hover:text-white"
-            >
+            <a href="#" className="text-zinc-400 transition hover:text-white">
               Analytics
             </a>
 
-            <a
-              href="#"
+            {/* FIXED DASHBOARD LINK */}
+            <Link
+              href="/dashboard"
               className="text-zinc-400 transition hover:text-white"
             >
               Dashboard
-            </a>
+            </Link>
 
-            <a
-              href="#"
-              className="text-zinc-400 transition hover:text-white"
-            >
+            <a href="/employees" className="text-zinc-400 transition hover:text-white">
               Contact
             </a>
           </div>
+
           <Link
-  href="/sign-up"
-  className="rounded-2xl bg-gradient-to-r from-teal-400 to-cyan-500 px-6 py-3 font-semibold text-black transition hover:scale-105"
->
-  Get Started
-</Link>
+            href="/sign-up"
+            className="rounded-2xl bg-gradient-to-r from-teal-400 to-cyan-500 px-6 py-3 font-semibold text-black transition hover:scale-105"
+          >
+            Get Started
+          </Link>
+
         </div>
       </nav>
     </motion.header>

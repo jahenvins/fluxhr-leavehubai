@@ -1,50 +1,41 @@
 "use client";
 
-import { Bell, Search } from "lucide-react";
+import { Menu } from "lucide-react";
 
-export default function Topbar() {
+export default function Topbar({
+  setOpen,
+}: {
+  setOpen: (v: boolean) => void;
+}) {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-black/40 backdrop-blur-2xl">
+    <header className="sticky top-0 z-40 flex items-center justify-between border-b border-white/10 bg-black/40 backdrop-blur-xl px-5 py-4">
       
-      <div className="flex items-center justify-between px-6 py-5">
+      {/* Left side */}
+      <div className="flex items-center gap-3">
         
+        {/* Hamburger button (mobile only) */}
+       <button
+        onClick={() => setOpen((v: boolean) => !v)}
+        className="lg:hidden text-white"
+      >
+        <Menu />
+      </button>
         <div>
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-white">
+          <h1 className="text-sm font-medium text-white">
             Dashboard
-          </h2>
-
-          <p className="mt-1 text-sm text-zinc-500">
-            Welcome back to FluxHR
+          </h1>
+          <p className="text-xs text-zinc-500">
+            Welcome back 👋
           </p>
         </div>
+      </div>
 
-        <div className="flex items-center gap-4">
-          
-          <button className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-zinc-400 transition hover:bg-white/10">
-            <Search size={18} />
-          </button>
+      {/* Right side (future profile / notifications) */}
+      <div className="flex items-center gap-3">
+        
+        {/* Placeholder avatar */}
+        <div className="h-9 w-9 rounded-full bg-gradient-to-br from-teal-400 to-cyan-500" />
 
-          <button className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-zinc-400 transition hover:bg-white/10">
-            <Bell size={18} />
-
-            <span className="absolute right-3 top-3 h-2 w-2 rounded-full bg-teal-400" />
-          </button>
-
-          <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-3 py-2">
-            
-            <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-teal-400 to-cyan-500" />
-
-            <div>
-              <p className="text-sm font-medium text-white">
-                Jahnevi
-              </p>
-
-              <p className="text-xs text-zinc-500">
-                HR Manager
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </header>
   );
