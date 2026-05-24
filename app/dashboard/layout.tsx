@@ -17,7 +17,7 @@ export default function DashboardLayout({
       <Sidebar open={open} setOpen={setOpen} />
 
       <div className="flex-1 flex flex-col">
-        <Topbar setOpen={setOpen} />
+       <Topbar open={open} setOpen={setOpen} />
 
         <main className="p-6 md:p-8">
           {children}
