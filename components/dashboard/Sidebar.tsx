@@ -19,11 +19,12 @@ const links = [
   { name: "AI Assistant", icon: Sparkles, href: "/dashboard/ai" },
 ];
 
-export default function Sidebar({
-  open,
-}: {
+type SidebarProps = {
   open: boolean;
-}) {
+  setOpen: (v: boolean) => void;
+};
+
+export default function Sidebar({ open, setOpen }: SidebarProps) {
   const pathname = usePathname();
 
   return (
